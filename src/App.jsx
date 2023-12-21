@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addNumber, minusNumber } from "./redux/modules/counter";
+import { __addNumber, __minusNumber } from "./redux/modules/counter";
 
 function App() {
   const counter = useSelector((state) => state.counter);
@@ -11,11 +12,11 @@ function App() {
   console.log(counter);
 
   const onClickPlus = () => {
-    dispatch(addNumber(count));
+    dispatch(__addNumber(count));
   };
 
   const onClickMinus = () => {
-    dispatch(minusNumber(count));
+    dispatch(__minusNumber(count));
   };
 
   return (
